@@ -22,7 +22,7 @@ int main(){
             printf("codice non trovato");
         }
         else{
-            printf("codice trovato");
+            printf("codice trovato a pos: %d\n",indice.pos);
             PtrFornitore = fopen("fornitore.dat", "r");
             if (PtrFornitore == NULL){
                 printf("errore in aperura di fornitore.dat\n");

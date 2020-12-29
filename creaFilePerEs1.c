@@ -7,8 +7,9 @@ struct Tindice indice;
 int main(){
     FILE *PtrIndice, *PtrFornitore;
     PtrFornitore = fopen("fornitore.dat", "wb");
-    if (PtrIndice == NULL)
-        printf("errore in aperura di indice.dat\n");
+    PtrIndice = fopen("indice.dat", "wb");
+    if (PtrIndice == NULL||PtrFornitore==NULL)
+        printf("errore in aperura \n");
     else{
         while(fornitore.codice!=99){
             printf("codice: ");
@@ -17,6 +18,10 @@ int main(){
             printf("nome: ");
             scanf("%s",&fornitore.nome);
             fwrite(&fornitore,sizeof(struct Tfornitore),1,PtrFornitore);
+            fseek(PtrFornitore,0,SEEK_CUR);
+            indice.pos=ftell(PtrFornitore)-24;
+            printf("%\n\t\t%d\n",indice.pos);
+            fwrite(&indice,sizeof(struct Tindice),1,PtrIndice);
             //fflush(st)
         }
     //fclose(PtrIndice);
