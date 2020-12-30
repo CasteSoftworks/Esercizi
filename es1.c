@@ -1,4 +1,5 @@
 #include <stdio.h>
+//1o_es1_0809
 struct Tfornitore {int codice; char nome[20];};
 struct Tindice {int codice; int pos;};
 struct Tfornitore fornitore;

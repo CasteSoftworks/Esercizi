@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+//1o_es2_0809
 struct EL{
     int cifra;
     struct EL *successivo;
